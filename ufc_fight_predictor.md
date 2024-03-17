@@ -3401,7 +3401,7 @@ for i in numerical_columns:
 ```
 
 
-    <Figure size 800x500 with 0 Axes>
+    <Figure size 640x480 with 0 Axes>
 
 
 
@@ -4881,7 +4881,7 @@ loss_fn = nn.BCEWithLogitsLoss() # BCEWithLogitsLoss = sigmoid built-in
 
 # Create an optimizer
 optimizer = torch.optim.SGD(params=model_0.parameters(), 
-                            lr=0.2)
+                            lr=0.01)
 ```
 
 
@@ -4898,7 +4898,7 @@ def accuracy_fn(y_true, y_pred):
 # Lets build our training loop
 
 # number of epochs we want to run our training loop for
-epochs = 200
+epochs = 500
 
 # transfer our data onto the target device
 X_train, y_train = X_train.to(device), y_train.to(device)
@@ -4944,26 +4944,56 @@ for epoch in range(epochs):
     
 ```
 
-    Epoch: 0 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 10 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 20 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 30 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 40 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 50 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 60 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 70 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 80 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 90 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 100 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 110 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 120 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 130 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 140 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 150 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 160 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 170 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 180 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
-    Epoch: 190 | Loss: 0.64282, Accuracy: 65.72% | Test loss: 0.64553, Test acc: 65.31%
+    Epoch: 0 | Loss: 0.53623, Accuracy: 71.14% | Test loss: 0.56632, Test acc: 69.31%
+    Epoch: 10 | Loss: 0.53645, Accuracy: 71.09% | Test loss: 0.56623, Test acc: 69.38%
+    Epoch: 20 | Loss: 0.53368, Accuracy: 71.36% | Test loss: 0.56428, Test acc: 69.65%
+    Epoch: 30 | Loss: 0.53628, Accuracy: 71.09% | Test loss: 0.56653, Test acc: 69.31%
+    Epoch: 40 | Loss: 0.53624, Accuracy: 71.07% | Test loss: 0.56613, Test acc: 69.31%
+    Epoch: 50 | Loss: 0.53335, Accuracy: 71.34% | Test loss: 0.56436, Test acc: 69.51%
+    Epoch: 60 | Loss: 0.53651, Accuracy: 71.14% | Test loss: 0.56699, Test acc: 69.17%
+    Epoch: 70 | Loss: 0.53473, Accuracy: 71.28% | Test loss: 0.56485, Test acc: 69.78%
+    Epoch: 80 | Loss: 0.53314, Accuracy: 71.26% | Test loss: 0.56453, Test acc: 69.58%
+    Epoch: 90 | Loss: 0.53744, Accuracy: 70.95% | Test loss: 0.56751, Test acc: 68.90%
+    Epoch: 100 | Loss: 0.53244, Accuracy: 71.46% | Test loss: 0.56368, Test acc: 69.78%
+    Epoch: 110 | Loss: 0.53611, Accuracy: 71.16% | Test loss: 0.56689, Test acc: 69.11%
+    Epoch: 120 | Loss: 0.53396, Accuracy: 71.43% | Test loss: 0.56452, Test acc: 69.72%
+    Epoch: 130 | Loss: 0.53459, Accuracy: 71.21% | Test loss: 0.56571, Test acc: 69.51%
+    Epoch: 140 | Loss: 0.53429, Accuracy: 71.28% | Test loss: 0.56503, Test acc: 69.58%
+    Epoch: 150 | Loss: 0.53341, Accuracy: 71.38% | Test loss: 0.56461, Test acc: 69.65%
+    Epoch: 160 | Loss: 0.53453, Accuracy: 71.28% | Test loss: 0.56549, Test acc: 69.65%
+    Epoch: 170 | Loss: 0.53392, Accuracy: 71.33% | Test loss: 0.56505, Test acc: 69.72%
+    Epoch: 180 | Loss: 0.53363, Accuracy: 71.31% | Test loss: 0.56477, Test acc: 69.72%
+    Epoch: 190 | Loss: 0.53423, Accuracy: 71.31% | Test loss: 0.56529, Test acc: 69.78%
+    Epoch: 200 | Loss: 0.53391, Accuracy: 71.33% | Test loss: 0.56500, Test acc: 69.65%
+    Epoch: 210 | Loss: 0.53325, Accuracy: 71.38% | Test loss: 0.56475, Test acc: 69.58%
+    Epoch: 220 | Loss: 0.53480, Accuracy: 71.21% | Test loss: 0.56569, Test acc: 69.38%
+    Epoch: 230 | Loss: 0.53303, Accuracy: 71.39% | Test loss: 0.56434, Test acc: 69.65%
+    Epoch: 240 | Loss: 0.53321, Accuracy: 71.41% | Test loss: 0.56484, Test acc: 69.51%
+    Epoch: 250 | Loss: 0.53471, Accuracy: 71.28% | Test loss: 0.56553, Test acc: 69.51%
+    Epoch: 260 | Loss: 0.53194, Accuracy: 71.51% | Test loss: 0.56372, Test acc: 69.65%
+    Epoch: 270 | Loss: 0.53388, Accuracy: 71.29% | Test loss: 0.56563, Test acc: 69.51%
+    Epoch: 280 | Loss: 0.53241, Accuracy: 71.56% | Test loss: 0.56398, Test acc: 69.65%
+    Epoch: 290 | Loss: 0.53332, Accuracy: 71.38% | Test loss: 0.56513, Test acc: 69.78%
+    Epoch: 300 | Loss: 0.53258, Accuracy: 71.58% | Test loss: 0.56408, Test acc: 69.51%
+    Epoch: 310 | Loss: 0.53213, Accuracy: 71.53% | Test loss: 0.56432, Test acc: 69.65%
+    Epoch: 320 | Loss: 0.53413, Accuracy: 71.34% | Test loss: 0.56541, Test acc: 69.44%
+    Epoch: 330 | Loss: 0.53201, Accuracy: 71.55% | Test loss: 0.56390, Test acc: 69.58%
+    Epoch: 340 | Loss: 0.53272, Accuracy: 71.45% | Test loss: 0.56486, Test acc: 69.72%
+    Epoch: 350 | Loss: 0.53266, Accuracy: 71.50% | Test loss: 0.56453, Test acc: 69.78%
+    Epoch: 360 | Loss: 0.53111, Accuracy: 71.65% | Test loss: 0.56350, Test acc: 69.58%
+    Epoch: 370 | Loss: 0.53425, Accuracy: 71.45% | Test loss: 0.56592, Test acc: 69.24%
+    Epoch: 380 | Loss: 0.53139, Accuracy: 71.55% | Test loss: 0.56361, Test acc: 69.58%
+    Epoch: 390 | Loss: 0.53245, Accuracy: 71.55% | Test loss: 0.56490, Test acc: 69.72%
+    Epoch: 400 | Loss: 0.53212, Accuracy: 71.60% | Test loss: 0.56427, Test acc: 69.78%
+    Epoch: 410 | Loss: 0.53263, Accuracy: 71.56% | Test loss: 0.56489, Test acc: 69.78%
+    Epoch: 420 | Loss: 0.53164, Accuracy: 71.72% | Test loss: 0.56401, Test acc: 69.65%
+    Epoch: 430 | Loss: 0.53226, Accuracy: 71.63% | Test loss: 0.56475, Test acc: 69.72%
+    Epoch: 440 | Loss: 0.53160, Accuracy: 71.73% | Test loss: 0.56403, Test acc: 69.72%
+    Epoch: 450 | Loss: 0.53129, Accuracy: 71.72% | Test loss: 0.56397, Test acc: 69.72%
+    Epoch: 460 | Loss: 0.53228, Accuracy: 71.73% | Test loss: 0.56462, Test acc: 69.58%
+    Epoch: 470 | Loss: 0.53076, Accuracy: 71.72% | Test loss: 0.56362, Test acc: 69.44%
+    Epoch: 480 | Loss: 0.53191, Accuracy: 71.78% | Test loss: 0.56452, Test acc: 69.58%
+    Epoch: 490 | Loss: 0.53115, Accuracy: 71.73% | Test loss: 0.56376, Test acc: 69.72%
     
 
 
@@ -4979,7 +5009,7 @@ for pred in y_pred:
 print(f'Fighter 1: {fighter_1}, fighter 2: {fighter_2}')
 ```
 
-    Fighter 1: 5901, fighter 2: 0
+    Fighter 1: 5114, fighter 2: 787
     
 
 Now we have trained our first iteration of our model lets see if we can improve the performance with some feature engineering.
@@ -4990,51 +5020,912 @@ Some of the features we think we can engineer from our data preprocessing steps 
   1. Age from the DOB column
   2. Clustering to determine fighter styles
   3. Balance our target variable
+  4. Scale our data
+  
+
+
+## Clustering
+Clustering is a type of unsupervised learning that can be used to find patterns in our data. Common examples include customer segmentation. In our problem, I want to see if we can detect different fighter styles based on a fighters stats. At a high level this seems like a reasonable assumption, E.G. fighters who are considered strikers probably don't attempt many takedowns, counter-intuitively they may defend more takedowns. 
+
+The reason I want to do this is to see how fight styles compare against each other for example do strikers do better against other strikers or wrestlers?
+
+One other factor we should consider is weight class, again this comes from domain knowledge (it is very important!), the reason we should consider this is heavyweights are likely to throw less punches/takedowns etc. than smaller fighters due to the amount of energy required to do so! Before we take this for granted though lets visualise our hypothesis!
+
+To do this I will create a new feature for the visualization which calculate the total significant strikes attempted in a fight, this is made by combining fighter_a_sig_stikes_att and the same column for fighter_b then visualise the average by weight class.
+
+
+
+
+
+```python
+X
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fighter_a_height</th>
+      <th>fighter_b_height</th>
+      <th>fighter_a_weight</th>
+      <th>fighter_b_weight</th>
+      <th>fighter_a_reach</th>
+      <th>fighter_b_reach</th>
+      <th>fighter_a_stance</th>
+      <th>fighter_b_stance</th>
+      <th>fighter_a_SLpM</th>
+      <th>fighter_b_SLpM</th>
+      <th>fighter_a_str_acc</th>
+      <th>fighter_b_str_acc</th>
+      <th>fighter_a_SApM</th>
+      <th>fighter_b_SApM</th>
+      <th>fighter_a_str_def</th>
+      <th>fighter_b_str_def</th>
+      <th>fighter_a_TD_avg</th>
+      <th>fighter_b_TD_avg</th>
+      <th>fighter_a_TD_acc</th>
+      <th>fighter_b_TD_acc</th>
+      <th>fighter_a_TD_def</th>
+      <th>fighter_b_TD_def</th>
+      <th>fighter_a_sub_avg</th>
+      <th>fighter_b_sub_avg</th>
+      <th>fighter_a_age</th>
+      <th>fighter_b_age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>185.0</td>
+      <td>185.0</td>
+      <td>74.0</td>
+      <td>75.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.32</td>
+      <td>4.72</td>
+      <td>39.0</td>
+      <td>53.0</td>
+      <td>3.44</td>
+      <td>4.11</td>
+      <td>61.0</td>
+      <td>60.0</td>
+      <td>1.46</td>
+      <td>0.47</td>
+      <td>39.0</td>
+      <td>50.0</td>
+      <td>83.0</td>
+      <td>92.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35.0</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>75.0</td>
+      <td>70.0</td>
+      <td>185.0</td>
+      <td>170.0</td>
+      <td>75.0</td>
+      <td>76.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4.53</td>
+      <td>3.87</td>
+      <td>54.0</td>
+      <td>33.0</td>
+      <td>3.26</td>
+      <td>3.31</td>
+      <td>61.0</td>
+      <td>57.0</td>
+      <td>0.87</td>
+      <td>1.51</td>
+      <td>31.0</td>
+      <td>36.0</td>
+      <td>76.0</td>
+      <td>65.0</td>
+      <td>1.5</td>
+      <td>0.0</td>
+      <td>29.0</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>72.0</td>
+      <td>71.0</td>
+      <td>145.0</td>
+      <td>145.0</td>
+      <td>73.0</td>
+      <td>73.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2.62</td>
+      <td>1.67</td>
+      <td>46.0</td>
+      <td>38.0</td>
+      <td>1.49</td>
+      <td>2.93</td>
+      <td>75.0</td>
+      <td>52.0</td>
+      <td>1.06</td>
+      <td>0.00</td>
+      <td>60.0</td>
+      <td>0.0</td>
+      <td>81.0</td>
+      <td>33.0</td>
+      <td>0.7</td>
+      <td>0.5</td>
+      <td>27.0</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>71.0</td>
+      <td>71.0</td>
+      <td>155.0</td>
+      <td>145.0</td>
+      <td>73.0</td>
+      <td>71.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>5.53</td>
+      <td>3.52</td>
+      <td>52.0</td>
+      <td>51.0</td>
+      <td>5.20</td>
+      <td>6.88</td>
+      <td>44.0</td>
+      <td>39.0</td>
+      <td>4.55</td>
+      <td>4.80</td>
+      <td>36.0</td>
+      <td>40.0</td>
+      <td>66.0</td>
+      <td>0.0</td>
+      <td>1.4</td>
+      <td>2.4</td>
+      <td>29.0</td>
+      <td>34.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>68.0</td>
+      <td>70.0</td>
+      <td>155.0</td>
+      <td>155.0</td>
+      <td>68.0</td>
+      <td>72.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>5.52</td>
+      <td>5.78</td>
+      <td>49.0</td>
+      <td>44.0</td>
+      <td>4.15</td>
+      <td>5.25</td>
+      <td>68.0</td>
+      <td>64.0</td>
+      <td>0.00</td>
+      <td>0.31</td>
+      <td>0.0</td>
+      <td>20.0</td>
+      <td>86.0</td>
+      <td>78.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>39.0</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>7514</th>
+      <td>68.0</td>
+      <td>67.0</td>
+      <td>145.0</td>
+      <td>135.0</td>
+      <td>68.0</td>
+      <td>70.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>7.28</td>
+      <td>1.16</td>
+      <td>52.0</td>
+      <td>42.0</td>
+      <td>2.25</td>
+      <td>4.02</td>
+      <td>64.0</td>
+      <td>38.0</td>
+      <td>0.66</td>
+      <td>0.93</td>
+      <td>55.0</td>
+      <td>30.0</td>
+      <td>94.0</td>
+      <td>33.0</td>
+      <td>0.4</td>
+      <td>0.9</td>
+      <td>39.0</td>
+      <td>43.0</td>
+    </tr>
+    <tr>
+      <th>7515</th>
+      <td>67.0</td>
+      <td>66.0</td>
+      <td>145.0</td>
+      <td>145.0</td>
+      <td>71.0</td>
+      <td>70.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.73</td>
+      <td>3.78</td>
+      <td>52.0</td>
+      <td>36.0</td>
+      <td>2.41</td>
+      <td>3.90</td>
+      <td>58.0</td>
+      <td>57.0</td>
+      <td>1.97</td>
+      <td>1.49</td>
+      <td>24.0</td>
+      <td>41.0</td>
+      <td>45.0</td>
+      <td>91.0</td>
+      <td>0.8</td>
+      <td>0.5</td>
+      <td>35.0</td>
+      <td>37.0</td>
+    </tr>
+    <tr>
+      <th>7516</th>
+      <td>71.0</td>
+      <td>73.0</td>
+      <td>170.0</td>
+      <td>155.0</td>
+      <td>74.0</td>
+      <td>73.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.85</td>
+      <td>4.41</td>
+      <td>47.0</td>
+      <td>46.0</td>
+      <td>4.67</td>
+      <td>4.48</td>
+      <td>59.0</td>
+      <td>53.0</td>
+      <td>0.65</td>
+      <td>1.16</td>
+      <td>64.0</td>
+      <td>33.0</td>
+      <td>65.0</td>
+      <td>73.0</td>
+      <td>0.0</td>
+      <td>1.2</td>
+      <td>42.0</td>
+      <td>41.0</td>
+    </tr>
+    <tr>
+      <th>7517</th>
+      <td>68.0</td>
+      <td>70.0</td>
+      <td>145.0</td>
+      <td>145.0</td>
+      <td>71.0</td>
+      <td>71.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.13</td>
+      <td>2.95</td>
+      <td>47.0</td>
+      <td>33.0</td>
+      <td>2.87</td>
+      <td>3.02</td>
+      <td>57.0</td>
+      <td>51.0</td>
+      <td>1.84</td>
+      <td>1.31</td>
+      <td>33.0</td>
+      <td>31.0</td>
+      <td>46.0</td>
+      <td>47.0</td>
+      <td>0.9</td>
+      <td>1.7</td>
+      <td>42.0</td>
+      <td>32.0</td>
+    </tr>
+    <tr>
+      <th>7518</th>
+      <td>64.0</td>
+      <td>62.0</td>
+      <td>115.0</td>
+      <td>115.0</td>
+      <td>65.0</td>
+      <td>63.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.89</td>
+      <td>4.83</td>
+      <td>43.0</td>
+      <td>47.0</td>
+      <td>4.75</td>
+      <td>5.56</td>
+      <td>53.0</td>
+      <td>38.0</td>
+      <td>2.00</td>
+      <td>2.27</td>
+      <td>57.0</td>
+      <td>50.0</td>
+      <td>61.0</td>
+      <td>77.0</td>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>33.0</td>
+      <td>34.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>7377 rows × 26 columns</p>
+</div>
+
+
+
+
+```python
+# Checking if weight class affects fighter output
+strikes_data = X[['fighter_a_SLpM', 'fighter_b_SLpM', 'fighter_a_weight']]
+strikes_data['total_stikes'] = (strikes_data['fighter_a_SLpM'] + 
+strikes_data['fighter_b_SLpM'])
+strikes_data = strikes_data.drop(['fighter_a_SLpM', 'fighter_b_SLpM'], axis=1)
+
+# anything over 205 pounds is a heavy weight so lets group them together
+strikes_data.loc[strikes_data["fighter_a_weight"] > 205, "fighter_a_weight"] = 265
+strikes_data = strikes_data.groupby('fighter_a_weight').filter(lambda x : len(x)>20)
+
+# Visualise 
+ax = sns.barplot(x='fighter_a_weight', y='total_stikes', data=strikes_data)
+```
+
+    C:\Users\lanna\Anaconda3\lib\site-packages\ipykernel_launcher.py:4: SettingWithCopyWarning: 
+    A value is trying to be set on a copy of a slice from a DataFrame.
+    Try using .loc[row_indexer,col_indexer] = value instead
+    
+    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+      after removing the cwd from sys.path.
+    
+
+
+    
+![png](output_43_1.png)
+    
+
+
+## Scaling data
+
+Finally, before we cluster we need to scale our data as clustering uses a distance based measure to assign points to clusters the performance can be greatly affected by non-scaled data!
+
+
+```python
+# Scaling our data
+
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+
+X_scaled = pd.DataFrame(scaler.fit_transform(X))
+X_scaled
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+      <th>14</th>
+      <th>15</th>
+      <th>16</th>
+      <th>17</th>
+      <th>18</th>
+      <th>19</th>
+      <th>20</th>
+      <th>21</th>
+      <th>22</th>
+      <th>23</th>
+      <th>24</th>
+      <th>25</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.473631</td>
+      <td>0.484832</td>
+      <td>0.450522</td>
+      <td>0.456494</td>
+      <td>0.449488</td>
+      <td>0.767506</td>
+      <td>-0.534529</td>
+      <td>1.205336</td>
+      <td>-0.064287</td>
+      <td>0.996799</td>
+      <td>-0.553568</td>
+      <td>0.913718</td>
+      <td>0.131208</td>
+      <td>0.425873</td>
+      <td>0.681731</td>
+      <td>0.665279</td>
+      <td>-0.106726</td>
+      <td>-0.757778</td>
+      <td>0.006857</td>
+      <td>0.656339</td>
+      <td>1.103150</td>
+      <td>1.478628</td>
+      <td>-0.855322</td>
+      <td>-0.741737</td>
+      <td>-0.651395</td>
+      <td>-0.880078</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.323584</td>
+      <td>-0.087228</td>
+      <td>0.450522</td>
+      <td>0.047716</td>
+      <td>0.690843</td>
+      <td>1.021917</td>
+      <td>-0.534529</td>
+      <td>1.205336</td>
+      <td>0.857550</td>
+      <td>0.413862</td>
+      <td>1.069901</td>
+      <td>-0.894986</td>
+      <td>-0.015953</td>
+      <td>-0.089470</td>
+      <td>0.681731</td>
+      <td>0.408279</td>
+      <td>-0.573134</td>
+      <td>0.040083</td>
+      <td>-0.421826</td>
+      <td>0.001269</td>
+      <td>0.762032</td>
+      <td>0.351764</td>
+      <td>1.131154</td>
+      <td>-0.741737</td>
+      <td>-1.592649</td>
+      <td>-1.355155</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.473631</td>
+      <td>0.198802</td>
+      <td>-0.654843</td>
+      <td>-0.633580</td>
+      <td>0.208133</td>
+      <td>0.258683</td>
+      <td>1.237850</td>
+      <td>-0.533346</td>
+      <td>-0.597581</td>
+      <td>-1.094915</td>
+      <td>0.204050</td>
+      <td>-0.442810</td>
+      <td>-1.463043</td>
+      <td>-0.334258</td>
+      <td>2.109911</td>
+      <td>-0.020055</td>
+      <td>-0.422935</td>
+      <td>-1.118349</td>
+      <td>1.132149</td>
+      <td>-1.683198</td>
+      <td>1.005688</td>
+      <td>-0.983780</td>
+      <td>0.071700</td>
+      <td>-0.125530</td>
+      <td>-1.906400</td>
+      <td>-1.355155</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.190313</td>
+      <td>0.198802</td>
+      <td>-0.378502</td>
+      <td>-0.633580</td>
+      <td>0.208133</td>
+      <td>-0.250140</td>
+      <td>1.237850</td>
+      <td>-0.533346</td>
+      <td>1.619399</td>
+      <td>0.173829</td>
+      <td>0.853438</td>
+      <td>0.732847</td>
+      <td>1.570122</td>
+      <td>2.210249</td>
+      <td>-1.052487</td>
+      <td>-1.133724</td>
+      <td>2.335985</td>
+      <td>2.564084</td>
+      <td>-0.153899</td>
+      <td>0.188431</td>
+      <td>0.274722</td>
+      <td>-2.361059</td>
+      <td>0.998722</td>
+      <td>2.216056</td>
+      <td>-1.592649</td>
+      <td>-0.721719</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.659640</td>
+      <td>-0.087228</td>
+      <td>-0.378502</td>
+      <td>-0.361061</td>
+      <td>-0.998642</td>
+      <td>0.004272</td>
+      <td>-0.534529</td>
+      <td>1.205336</td>
+      <td>1.611781</td>
+      <td>1.723755</td>
+      <td>0.528744</td>
+      <td>0.099801</td>
+      <td>0.711679</td>
+      <td>1.160237</td>
+      <td>1.395821</td>
+      <td>1.007947</td>
+      <td>-1.260888</td>
+      <td>-0.880525</td>
+      <td>-2.082972</td>
+      <td>-0.747383</td>
+      <td>1.249343</td>
+      <td>0.894328</td>
+      <td>-0.855322</td>
+      <td>-0.741737</td>
+      <td>-0.023892</td>
+      <td>-1.513514</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>7372</th>
+      <td>-0.659640</td>
+      <td>-0.945317</td>
+      <td>-0.654843</td>
+      <td>-0.906098</td>
+      <td>-0.998642</td>
+      <td>-0.504551</td>
+      <td>-0.534529</td>
+      <td>-0.533346</td>
+      <td>2.952635</td>
+      <td>-1.444677</td>
+      <td>0.853438</td>
+      <td>-0.081069</td>
+      <td>-0.841694</td>
+      <td>0.367897</td>
+      <td>0.987770</td>
+      <td>-1.219391</td>
+      <td>-0.739144</td>
+      <td>-0.404878</td>
+      <td>0.864223</td>
+      <td>-0.279476</td>
+      <td>1.639191</td>
+      <td>-0.983780</td>
+      <td>-0.325595</td>
+      <td>0.367435</td>
+      <td>-0.023892</td>
+      <td>0.703513</td>
+    </tr>
+    <tr>
+      <th>7373</th>
+      <td>-0.942958</td>
+      <td>-1.231347</td>
+      <td>-0.654843</td>
+      <td>-0.633580</td>
+      <td>-0.274577</td>
+      <td>-0.504551</td>
+      <td>-0.534529</td>
+      <td>-0.533346</td>
+      <td>1.009920</td>
+      <td>0.352139</td>
+      <td>0.853438</td>
+      <td>-0.623680</td>
+      <td>-0.710883</td>
+      <td>0.290596</td>
+      <td>0.375693</td>
+      <td>0.408279</td>
+      <td>0.296440</td>
+      <td>0.024739</td>
+      <td>-0.796923</td>
+      <td>0.235222</td>
+      <td>-0.748629</td>
+      <td>1.436893</td>
+      <td>0.204132</td>
+      <td>-0.125530</td>
+      <td>-0.651395</td>
+      <td>-0.246641</td>
+    </tr>
+    <tr>
+      <th>7374</th>
+      <td>0.190313</td>
+      <td>0.770862</td>
+      <td>0.036010</td>
+      <td>-0.361061</td>
+      <td>0.449488</td>
+      <td>0.258683</td>
+      <td>1.237850</td>
+      <td>-0.533346</td>
+      <td>0.339493</td>
+      <td>0.784198</td>
+      <td>0.312282</td>
+      <td>0.280671</td>
+      <td>1.136813</td>
+      <td>0.664219</td>
+      <td>0.477706</td>
+      <td>0.065612</td>
+      <td>-0.747049</td>
+      <td>-0.228428</td>
+      <td>1.346491</td>
+      <td>-0.139104</td>
+      <td>0.225991</td>
+      <td>0.685650</td>
+      <td>-0.855322</td>
+      <td>0.737159</td>
+      <td>0.446735</td>
+      <td>0.386795</td>
+    </tr>
+    <tr>
+      <th>7375</th>
+      <td>-0.659640</td>
+      <td>-0.087228</td>
+      <td>-0.654843</td>
+      <td>-0.633580</td>
+      <td>-0.274577</td>
+      <td>-0.250140</td>
+      <td>-0.534529</td>
+      <td>-0.533346</td>
+      <td>-0.209038</td>
+      <td>-0.217081</td>
+      <td>0.312282</td>
+      <td>-0.894986</td>
+      <td>-0.334804</td>
+      <td>-0.276282</td>
+      <td>0.273680</td>
+      <td>-0.105722</td>
+      <td>0.193672</td>
+      <td>-0.113352</td>
+      <td>-0.314655</td>
+      <td>-0.232685</td>
+      <td>-0.699898</td>
+      <td>-0.399479</td>
+      <td>0.336564</td>
+      <td>1.353366</td>
+      <td>0.446735</td>
+      <td>-1.038437</td>
+    </tr>
+    <tr>
+      <th>7376</th>
+      <td>-1.792911</td>
+      <td>-2.375466</td>
+      <td>-1.483867</td>
+      <td>-1.451135</td>
+      <td>-1.722706</td>
+      <td>-2.285431</td>
+      <td>-0.534529</td>
+      <td>-0.533346</td>
+      <td>0.369967</td>
+      <td>1.072237</td>
+      <td>-0.120643</td>
+      <td>0.371107</td>
+      <td>1.202218</td>
+      <td>1.359933</td>
+      <td>-0.134372</td>
+      <td>-1.219391</td>
+      <td>0.320155</td>
+      <td>0.623135</td>
+      <td>0.971393</td>
+      <td>0.656339</td>
+      <td>0.031067</td>
+      <td>0.852592</td>
+      <td>-0.060732</td>
+      <td>-0.248771</td>
+      <td>-0.965146</td>
+      <td>-0.721719</td>
+    </tr>
+  </tbody>
+</table>
+<p>7377 rows × 26 columns</p>
+</div>
+
+
 
 
 ```python
 # Lets cluster our fighters - My assumption based on domain knowledge is we have 
 # different style of fighters, which might help us predict the winner
-
 from sklearn.cluster import KMeans
+from sklearn.preprocessing import scale
+from mpl_toolkits.mplot3d import Axes3D
 
-# split the features and target variable
-y = dataframe['winner']
-X = dataframe.drop('winner', axis=1)
-
-# create a list of number of clusters to try
-estimators = [
-    ('K_means_cluster_3', KMeans(n_clusters=3)),
-    ('K_means_cluster_5', KMeans(n_clusters=5)),
-    ('K_means_cluster_7', KMeans(n_clusters=7)),
-]
-
-# create a plot 
-fig = plt.figure(figsize=(10,8))
-titles = ['3 Clusters', '5 Clusters', '7 Clusters']
-for idx, ((name, est), title) in enumerate(zip(estimators, titles)):
-    ax = fig.add_subplot(2, 2, idx + 1, projection='3d')
-    est.fit(X)
-    labels = est.labels_
-    
+# intialise our clusterer and fit to our data
+kmeans = KMeans(n_clusters=3, random_state=13)
+kmeans.fit(X_scaled)
 
 ```
 
-    Index(['fighter_a_height', 'fighter_b_height', 'fighter_a_weight',
-           'fighter_b_weight', 'fighter_a_reach', 'fighter_b_reach',
-           'fighter_a_stance', 'fighter_b_stance', 'fighter_a_SLpM',
-           'fighter_b_SLpM', 'fighter_a_str_acc', 'fighter_b_str_acc',
-           'fighter_a_SApM', 'fighter_b_SApM', 'fighter_a_str_def',
-           'fighter_b_str_def', 'fighter_a_TD_avg', 'fighter_b_TD_avg',
-           'fighter_a_TD_acc', 'fighter_b_TD_acc', 'fighter_a_TD_def',
-           'fighter_b_TD_def', 'fighter_a_sub_avg', 'fighter_b_sub_avg',
-           'fighter_a_age', 'fighter_b_age'],
-          dtype='object')
+
+
+
+    KMeans(n_clusters=3, random_state=13)
+
+
+
+## How many clusters do we need?
+When deciding on how many clusters we need we can use the elbow method to visualize the change the cluster variability. 
+
+To do this we iteratively change the number of clusters and measure the mean distance to the clusters. As the number of clusters increase the mean distance to each cluster should reduce until we have just as many clusters as data points which would leave a mean distance of 0 as each point would be its own cluster. However, at some point on the graph the reduction in mean distance will slow and this will indicate that this number of clusters is suitable for our problem.
+
+
+```python
+# calculate the best number of clusters using the inertia value
+
+# set up a range of clusters to try
+cluster_no = range(2, 20)
+
+# create a list to hold the inertia values
+inertia = []
+
+for k in cluster_no:
+    kmeans = KMeans(n_clusters=k, random_state=13)
+    kmeans.fit(X_scaled)
+    u = kmeans.inertia_
+    inertia.append(u)
+    print(f'Clusters {k}: Inertia value: {u}')
+```
+
+    Clusters 2: Inertia value: 165406.7367866168
+    Clusters 3: Inertia value: 149473.23686267558
+    Clusters 4: Inertia value: 140288.81341861948
+    Clusters 5: Inertia value: 134319.20471656678
+    Clusters 6: Inertia value: 130566.36034387111
+    Clusters 7: Inertia value: 126947.54501847473
+    Clusters 8: Inertia value: 124201.77554230615
+    Clusters 9: Inertia value: 121792.24049661327
+    Clusters 10: Inertia value: 119570.1171147014
+    Clusters 11: Inertia value: 117423.09905970395
+    Clusters 12: Inertia value: 115466.82909775617
+    Clusters 13: Inertia value: 113640.80760232729
+    Clusters 14: Inertia value: 112233.89238787719
+    Clusters 15: Inertia value: 110904.94324385807
+    Clusters 16: Inertia value: 109554.0106812753
+    Clusters 17: Inertia value: 108299.15908490233
+    Clusters 18: Inertia value: 107305.15115753404
+    Clusters 19: Inertia value: 106485.15769976584
     
 
 
+```python
+# create the elbow plot
+fig, ax1 = plt.subplots(1, figsize =(16, 8))
+x = np.arange(len(cluster_no))
+ax1.plot(x, inertia)
+ax1.set_xticks(x)
+ax1.set_xticklabels(cluster_no, rotation='45')
+plt.xlabel('Number of Clusters')
+plt.ylabel('Inertia Score')
+plt.title('Inertia for k value')
+```
+
+
+
+
+    Text(0.5, 1.0, 'Inertia for k value')
+
+
+
+
     
-![png](output_41_1.png)
+![png](output_49_1.png)
     
 
 
@@ -5057,6 +5948,6 @@ sns.heatmap(corr, cmap="Blues")
 
 
     
-![png](output_42_1.png)
+![png](output_50_1.png)
     
 
