@@ -182,7 +182,7 @@ from sklearn.preprocessing import LabelEncoder
 
 
 ```python
-cnx = mysql.connector.connect(user='root', password='Ashtead96',
+cnx = mysql.connector.connect(user='root', password='password',
                               host='localhost',
                               database='ufc_database', auth_plugin='mysql_native_password')
 
